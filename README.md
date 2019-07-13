@@ -1,10 +1,9 @@
 <p align="center"><img src="https://oservo.com/aifi/img/aifi.png" alt="aifi" width="200px"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+<img src="https://awesome.re/badge-flat.svg" alt="License">
+<img src="https://img.shields.io/badge/powered%20by-oservo-blue.svg" alt="made with python">
 </p>
 
 ## About aiFi
