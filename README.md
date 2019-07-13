@@ -1,4 +1,4 @@
-<p align="center"><img src="https://avatars1.githubusercontent.com/u/47330605?s=100&v=4"></p>
+<p align="center"><img src="https://oservo.com/aifi/img/aifi.png" alt="aifi" width="200px"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
