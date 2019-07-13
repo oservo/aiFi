@@ -12,18 +12,12 @@
 aiFi is a Multi Layer Perceptron (MLP) Artificial Neural Network (ANN) Framework Developed in C
 
 - [Simple, super fast](https://aifi.oservo.com/docs/routing).
-- [Powerful dependency injection container](https://aifi.oservo.com).
-- Multiple back-ends for [session](https://aifi.oservo.com/docs/session) and [cache](#) storage.
-- Expressive, intuitive [database ORM](https://aifi.oservo.com/docs/eloquent).
-- Database agnostic [schema migrations](https://aifi.oservo.com/docs/migrations).
-- [Robust background job processing](https://aifi.oservo.com/docs/queues).
-- [Real-time event broadcasting](https://aifi.oservo.com/docs/broadcasting).
 
-aiFi is accessible, powerful, and provides tools required for large, robust MLP applications.
+aiFi is accessible, powerful, and provides tools required for large, robust AI applications.
 
-## Learning aiFi
+## Learning aiFi (Under Construction)
 
-aiFi has the most extensive and thorough [documentation](https://oservo.com/docs) and video tutorial library of all modern multi layer perceptron, making it a breeze to get started with this.
+aiFi aims to provide the most extensive and thorough [documentation](https://aifi.oservo.com/docs) and video tutorial library of all modern multi layer perceptron, making it a breeze to get started with this. 
 
 ## aiFi Sponsors
 
