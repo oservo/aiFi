@@ -1,5 +1,5 @@
-#ifndef PANN__ACTIVATION
-#define PANN__ACTIVATION
+#ifndef AIFI__ACTIVATION
+#define AIFI__ACTIVATION
 
 // [INCLUDE] //
 #include "popc.h"

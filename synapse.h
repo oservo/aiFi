@@ -1,5 +1,5 @@
-#ifndef PANN__SYNAPSE
-#define PANN__SYNAPSE
+#ifndef AIFI__SYNAPSE
+#define AIFI__SYNAPSE
 
 // [INCLUDE] //
 #include "popc.h"

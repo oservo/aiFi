@@ -1,5 +1,5 @@
-#ifndef PANN__NOISE
-#define PANN__NOISE
+#ifndef AIFI__NOISE
+#define AIFI__NOISE
 
 /* [INCLUDE] *************/
 #include "popc.h"

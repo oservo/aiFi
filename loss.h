@@ -1,5 +1,5 @@
-#ifndef PANN__LOSS
-#define PANN__LOSS
+#ifndef AIFI__LOSS
+#define AIFI__LOSS
 
 // [INCLUDE] //
 #include "popc.h"

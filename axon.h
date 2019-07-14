@@ -1,5 +1,5 @@
-#ifndef PANN__AXON
-#define PANN__AXON
+#ifndef AIFI__AXON
+#define AIFI__AXON
 
 /* [INCLUDE] *************/
 #include "popc.h"

@@ -1,5 +1,5 @@
-#ifndef PANN__OPTIMIZATION
-#define PANN__OPTIMIZATION
+#ifndef AIFI__OPTIMIZATION
+#define AIFI__OPTIMIZATION
 
 /* [INCLUDE] *************/
 #include "popc.h"

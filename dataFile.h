@@ -1,5 +1,5 @@
-#ifndef PANN__DATA_FILE
-#define PANN__DATA_FILE
+#ifndef AIFI__DATA_FILE
+#define AIFI__DATA_FILE
 
 /* [INCLUDE] *************/
 #include "popc.h"

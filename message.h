@@ -1,5 +1,5 @@
-#ifndef PANN__MESSAGE
-#define PANN__MESSAGE
+#ifndef AIFI__MESSAGE
+#define AIFI__MESSAGE
 
 /* [INCLUDE] *************/
 #include "popc.h"

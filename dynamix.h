@@ -1,5 +1,5 @@
-#ifndef PANN__DYNAMIX
-#define PANN__DYNAMIX
+#ifndef AIFI__DYNAMIX
+#define AIFI__DYNAMIX
 
 /* [INCLUDE] *************/
 #include "popc.h"

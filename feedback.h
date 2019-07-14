@@ -1,5 +1,5 @@
-#ifndef PANN__FEEDBACK
-#define PANN__FEEDBACK
+#ifndef AIFI__FEEDBACK
+#define AIFI__FEEDBACK
 
 /* [INCLUDE] *************/
 #include "popc.h"

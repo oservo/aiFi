@@ -1,5 +1,5 @@
-#ifndef PANN__PREDICT
-#define PANN__PREDICT
+#ifndef AIFI__PREDICT
+#define AIFI__PREDICT
 
 // [INCLUDE] //
 #include "popc.h"

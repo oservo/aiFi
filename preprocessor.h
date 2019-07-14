@@ -1,5 +1,5 @@
-#ifndef PANN__PREPROCESSOR
-#define PANN__PREPROCESSOR
+#ifndef AIFI__PREPROCESSOR
+#define AIFI__PREPROCESSOR
 
 /* [INCLUDE] *************/
 #include "popc.h"

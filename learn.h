@@ -1,5 +1,5 @@
-#ifndef PANN__LEARN
-#define PANN__LEARN
+#ifndef AIFI__LEARN
+#define AIFI__LEARN
 
 /* [INCLUDE] *************/
 #include "popc.h"

@@ -1,5 +1,5 @@
-#ifndef PANN__DENDRITE
-#define PANN__DENDRITE
+#ifndef AIFI__DENDRITE
+#define AIFI__DENDRITE
 
 /* [INCLUDE] *************/
 #include "popc.h"

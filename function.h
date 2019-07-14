@@ -1,5 +1,5 @@
-#ifndef PANN__FUNCTION
-#define PANN__FUNCTION
+#ifndef AIFI__FUNCTION
+#define AIFI__FUNCTION
 
 // [INCLUDE] //
 #include "popc.h"

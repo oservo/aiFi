@@ -1,5 +1,5 @@
-#ifndef PANN__MATRIX
-#define PANN__MATRIX
+#ifndef AIFI__MATRIX
+#define AIFI__MATRIX
 
 /* [INCLUDE] *************/
 #include "popc.h"

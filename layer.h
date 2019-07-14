@@ -1,5 +1,5 @@
-#ifndef PANN__LAYER
-#define PANN__LAYER
+#ifndef AIFI__LAYER
+#define AIFI__LAYER
 
 // [INCLUDE] //
 #include "popc.h"

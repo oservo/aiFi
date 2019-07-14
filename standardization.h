@@ -1,5 +1,5 @@
-#ifndef PANN__STANDARDIZATION
-#define PANN__STANDARDIZATION
+#ifndef AIFI__STANDARDIZATION
+#define AIFI__STANDARDIZATION
 
 /* [INCLUDE] *************/
 #include "popc.h"

@@ -4,8 +4,8 @@
 	gcc neural.c -lm -O2 && ./a.out
 */
 
-#ifndef PANN__MAIN
-#define PANN__MAIN
+#ifndef AIFI__MAIN
+#define AIFI__MAIN
 
 // [INCLUDE] //
 #include "popc.h"

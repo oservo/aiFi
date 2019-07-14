@@ -1,5 +1,5 @@
-#ifndef PANN__MOMENTUM
-#define PANN__MOMENTUM
+#ifndef AIFI__MOMENTUM
+#define AIFI__MOMENTUM
 
 /* [INCLUDE] *************/
 #include "popc.h"

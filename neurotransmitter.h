@@ -1,5 +1,5 @@
-#ifndef PANN__NEUROTRANSMITTER
-#define PANN__NEUROTRANSMITTER
+#ifndef AIFI__NEUROTRANSMITTER
+#define AIFI__NEUROTRANSMITTER
 
 /* [INCLUDE] *************/
 #include "popc.h"

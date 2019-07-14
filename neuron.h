@@ -1,5 +1,5 @@
-#ifndef PANN__NEURON
-#define PANN__NEURON
+#ifndef AIFI__NEURON
+#define AIFI__NEURON
 
 // [INCLUDE] //
 #include "popc.h"

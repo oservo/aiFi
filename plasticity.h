@@ -1,5 +1,5 @@
-#ifndef PANN__PLASTICITY
-#define PANN__PLASTICITY
+#ifndef AIFI__PLASTICITY
+#define AIFI__PLASTICITY
 
 /* [INCLUDE] *************/
 #include "popc.h"

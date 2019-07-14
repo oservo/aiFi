@@ -1,5 +1,5 @@
-#ifndef PANN__ACTION_POTENTIAL
-#define PANN__ACTION_POTENTIAL
+#ifndef AIFI__ACTION_POTENTIAL
+#define AIFI__ACTION_POTENTIAL
 
 // [INCLUDE] //
 #include "popc.h"

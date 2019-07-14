@@ -1,5 +1,5 @@
-#ifndef PANN__RECEPTOR
-#define PANN__RECEPTOR
+#ifndef AIFI__RECEPTOR
+#define AIFI__RECEPTOR
 
 /* [INCLUDE] *************/
 #include "popc.h"

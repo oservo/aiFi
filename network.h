@@ -1,5 +1,5 @@
-#ifndef PANN__NETWORK
-#define PANN__NETWORK
+#ifndef AIFI__NETWORK
+#define AIFI__NETWORK
 
 // [INCLUDE] //
 #include "popc.h"

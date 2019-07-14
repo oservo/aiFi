@@ -1,5 +1,5 @@
-#ifndef PANN__OUTPUT
-#define PANN__OUTPUT
+#ifndef AIFI__OUTPUT
+#define AIFI__OUTPUT
 
 /* [INCLUDE] *************/
 #include "popc.h"
