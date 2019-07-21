@@ -22,7 +22,7 @@
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+# Shared objs (inc. Windows DLLs)
 *.dll
 *.so
 *.so.*
@@ -35,6 +35,17 @@
 *.i*86
 *.x86_64
 *.hex
+
+pann
+test
+aifi
+*.java
+test.c
+.todo
+.TODO
+.vscode/
+java/
+cs/
 
 # Debug files
 *.dSYM/
