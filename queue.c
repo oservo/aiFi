@@ -1,36 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "popc.h"
-#include "dbc.h"
+
 
 
 #include "linkedList.h"
 #include "queue.h"
 
-property queueProperty {
-
-} queueProperty;
-
-queue ptr queueConstruct () {
+queue ptr queueNew () {
 	queue ptr q;
-	q = (queue ptr) linkedListConstruct ();
+	q = (queue ptr) linkedListNew ();
 	return q;
 }
 
-void queueEnqueue(queue ptr queue, any ptr object) {
-	linkedListAddNodeBeforeHead (queue, object);
+void queueEnqueue(queue ptr queue, object ptr obj) {
+	linkedListAddNodeBeforeHead (queue, obj);
 }
 
-any ptr queueDequeue(queue ptr queue) {
+object ptr queueDequeue(queue ptr queue) {
 	linkedListNode ptr tmp = queue -> head;
-	any ptr object;
+	object ptr obj;
 
 	if (queue -> head == NULL) {
-		object = NULL;
+		obj = NULL;
 	} 
 	else if (queue -> head == queue -> tail) {
 		queue -> head = queue -> tail = NULL;
-		object = tmp -> object;
+		obj = tmp -> obj;
 		free(tmp);
 	} 
 	else {
@@ -40,8 +36,8 @@ any ptr queueDequeue(queue ptr queue) {
 		queue -> tail = tmp;
 		tmp = tmp -> next;
 		queue -> tail -> next = NULL;
-		object = tmp -> object;
+		obj = tmp -> obj;
 		free(tmp);
 	}
-	return object;
+	return obj;
 }

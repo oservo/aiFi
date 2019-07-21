@@ -14,7 +14,7 @@ aiFi is a Multi Layer Perceptron (MLP) Artificial Neural Network (ANN) Framework
 
 aiFi is accessible, powerful, and provides tools required for large, robust AI applications.
 
-## Learning aiFi (Under Construction)
+## Learning aiFi (Under Newion)
 
 aiFi aims to provide the most extensive and thorough [documentation](https://aifi.oservo.com/docs) and video tutorial library of all modern multi layer perceptron, making it a breeze to get started with this. 
 

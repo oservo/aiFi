@@ -1,85 +1,88 @@
 #ifndef AIFI__ACTIVATION
 #define AIFI__ACTIVATION
 
-// [INCLUDE] //
+// <INCLUDE> //
 #include "popc.h"
 
-// [/INCLUDE] //
+// </INCLUDE> //
 
-// [DEFINE] //
+// <DEFINE> //
 //#define REQUIRED STUFFS HERE
-// [/DEFINE] //
+// </DEFINE> //
 
 // -- V2 -- //
 
 delegation double (fnPtr activationTransferDelegate) (double x);
-delegation double (fnPtr activationTransferDerivativeDelegate) (double x);
+delegation double (fnPtr activationTransferPrimeDelegate) (double x);
 
-enumeration {
-	attIdentity,
-	attBinary,
-	attLogisticSigmoid,								// Logistic
-	attBipolarSigmoid,								// Bipolar Sigmoid
-	attArcTan, 												// Arc Tangent
-	attHyperbolicTan, 								// Hyperbolic Tangent
-	attExponentialLinerUnit, 					// Exponential Linear Unit
-	attRectifiedLinerUnit, 						// Rectified Linear Unit
-	attLeakyRectifiedLinerUnit, 			// Leakey Rectified Linear Unit
-	attParametricRectifiedLinerUnit,	// Parametric Rectified Linear Unit
-	attSoftMax
-} activationTransferType;
+enumeration activationFunctionType {
+	aftNone,
+	aftIdentity,
+	aftBinary,
+	aftLogisticSigmoid,								// Logistic
+	aftBipolarSigmoid,								// Bipolar Sigmoid
+	aftArcTan, 												// Arc Tangent
+	aftHyperbolicTan, 								// Hyperbolic Tangent
+	aftExponentialLinerUnit, 					// Exponential Linear Unit
+	aftRectifiedLinerUnit, 						// Rectified Linear Unit
+	aftLeakyRectifiedLinerUnit, 			// Leakey Rectified Linear Unit
+	aftParametricRectifiedLinerUnit,	// Parametric Rectified Linear Unit
+	aftSoftMax
+} activationFunctionType;
 
 subject activation {
-	activationTransferType att;
+	activationFunctionType aft;
 	activationTransferDelegate activationTransferFunction;
-	activationTransferDerivativeDelegate activationTransferFunctionDerivative;
+	activationTransferPrimeDelegate activationTransferFunctionPrime;
 } activation;
 
 
-prototype activationProto activationProto;
-
-prototype activationProto {
-	activationProto ptr (fnPtr protoInstance) ();
+pattern activationProto activationProto;
+pattern activationProto {
+	activation ptr (fnPtr activationNew) (activationFunctionType aft);
+	void (fnPtr activationDel) ();
 	
 	double (fnPtr sigmoid) (double x);
-	double (fnPtr sigmoidDerivative) (double x);
+	double (fnPtr sigmoidPrime) (double x);
 	double (fnPtr transfer) (double x);
-	double (fnPtr transferDerivative) (double x);
-	void (fnPtr setActivationType) (activationTransferType activationTransferType);	
+	double (fnPtr transferPrime) (double x);
+	void (fnPtr setActivationFunctionType) (activationFunctionType aft);	
 } activationProto;
+
 
 #ifdef Cplusplus
 extern "C" {
 #endif
 
-activationProto ptr activationProtoInstance ();
-activation ptr activationConstruct ();
-void activationDestruct (activation ptr);
+activationProto ptr activationProtoNew ();
 
-double activationBipolarSigmoid (double x);
+activation ptr activationNew (activationFunctionType aft);
+void activationDel (activation ptr);
 
-double activationBipolarSigmoidDerivative (double x);
+ double activationBipolarSigmoid (double x);
 
-double activationLogisticSigmoid (double x);
+ double activationBipolarSigmoidPrime (double x);
 
-double activationLogisticSigmoidDerivative (double x);
+ double activationLogisticSigmoid (double x);
 
-
-double activationHyperbolicTan (double x);
-
-double activationHyperbolicTanDerivative (double x);
+ double activationLogisticSigmoidPrime (double x);
 
 
-double activationRectifiedLinearUnit (double x);
+ double activationHyperbolicTan (double x);
 
-double activationRectifiedLinearUnitDerivative (double x);
+ double activationHyperbolicTanPrime (double x);
 
 
-double activationTransfer (activation ptr act, double x);
+ double activationRectifiedLinearUnit (double x);
 
-double activationTransferDerivative (activation ptr act, double x);
+ double activationRectifiedLinearUnitPrime (double x);
 
-void activationSetActivationTransferType (activation ptr act, activationTransferType att);
+
+ double activationTransfer (activation ptr act, double x);
+
+ double activationTransferPrime (activation ptr act, double x);
+
+void activationSetFunctionType (activation ptr act, activationFunctionType aft);
 
 	
 #ifdef Cplusplus

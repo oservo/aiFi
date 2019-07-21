@@ -1,54 +1,80 @@
 #ifndef AIFI__LOSS
 #define AIFI__LOSS
 
-// [INCLUDE] //
+// <INCLUDE> //
 #include "popc.h"
-// [/INCLUDE] //
+// </INCLUDE> //
 
-// [DEFINE] //
+// <DEFINE> //
 //#define REQUIRED STUFFS HERE
-// [/DEFINE] //
+// </DEFINE> //
 
-// [TYPE] //
+delegation double (fnPtr lossFunctionDelegate) (double t, double o);
+delegation double (fnPtr lossFunctionPrimeDelegate) (double t, double o);
+
+// <TYPE> //
+enumeration lossFunctionType {
+	lftQuadraticMeanSquaredError,
+	lftMeanSquaredLogarithmicError,
+	lftActualError,
+	lftL1,
+	lftL2,
+	lftMeanAbsoluteError,
+	lftMeanAbsolutePercentageError,
+	lftRelativeEntropy,
+	lftCrossEntropy,
+	lftKullbackLeiblerDivergence,
+	lftNegativeLogarithmicLikelihood,
+	lftPoisson,
+	lftCosineProximity,
+	lftHinge,
+	lftSquaredHinge,
+} lossFunctionType;
+
 subject loss{
-
+	lossFunctionType lft;
+	lossFunctionDelegate lossTransferFunction;
+	lossFunctionPrimeDelegate lossTransferFunctionPrime;
 } loss;
 
 
-prototype lossProto{
+pattern lossProto {
 
 } lossProto;
 
-// [/TYPE] //
+// </TYPE> //
 
-// [DECLARATION] //
+// <DECLARATION> //
 
 #ifdef Cplusplus
 extern "C" {
 #endif
+loss ptr lossNew (lossFunctionType lft);
+void lossDel (loss ptr act);
 
-double quadraticMeanSquaredError (double t, double o);
-double meanSquaredLogarithmicError (double t, double o);
-double l2 (double t, double o);
-double l1 (double t, double o);
-double meanAbsoluteError (double t, double o);
-double meanAbsolutePercentageError (double t, double o);
-double relativeEntropy (double t, double o);
-double crossEntropy (double t, double o);
-double kullbackLeiblerDivergence (double t, double o);
-double negativeLogarithmicLikelihood (double t, double o);
-double poisson (double t, double o);
-double cosineProximity (double t, double o);
-double hinge (double t, double o);
-double squaredHinge (double t, double o);
-
-double l1 (double t, double o);
+double lossQuadraticMeanSquaredError (double t, double o);
+double lossMeanSquaredLogarithmicError (double t, double o);
+double lossL1 (double t, double o);
+double lossL2 (double t, double o);
+double lossActualError (double t, double o);
+double lossActualErrorPrime (double t, double o);
+double lossMeanAbsoluteError (double t, double o);
+double lossMeanAbsoluteErrorPrime (double t, double o);
+double lossMeanAbsolutePercentageError (double t, double o);
+double lossRelativeEntropy (double t, double o);
+double lossCrossEntropy (double t, double o);
+double lossKullbackLeiblerDivergence (double t, double o);
+double lossNegativeLogarithmicLikelihood (double t, double o);
+double lossPoisson (double t, double o);
+double lossCosineProximity (double t, double o);
+double lossHinge (double t, double o);
+double lossSquaredHinge (double t, double o);
 
 
 #ifdef Cplusplus
 }
 #endif
 
-// [/DECLARATION] //
+// </DECLARATION> //
 
 #endif

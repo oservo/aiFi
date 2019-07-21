@@ -1,35 +1,35 @@
 #ifndef AIFI__STANDARDIZATION
 #define AIFI__STANDARDIZATION
 
-/* [INCLUDE] *************/
+/* <INCLUDE> *************/
 #include "popc.h"
-/* [/INCLUDE] ************/
+/* </INCLUDE> ************/
 
-/* [DEFINE] *************/
+/* <DEFINE> *************/
 //#define REQUIRED STUFFS HERE
-/* [/DEFINE] ************/
+/* </DEFINE> ************/
 
-/* [CONST] *************/
+/* <CONST> *************/
 //#define REQUIRED STUFFS HERE
-/* [/CONST] ************/
+/* </CONST> ************/
 
-/* [TYPE] *************/
+/* <TYPE> *************/
 
 subject standardization {
 
 } standardization;
 
-prototype standardizationProto {
+pattern standardizationProto {
 
 } standardizationProto;
 
-/* [/TYPE] ************/
+/* </TYPE> ************/
 
-/* [VARIABLE] *************/
+/* <VARIABLE> *************/
 
-/* [/VARIABLE] ************/
+/* </VARIABLE> ************/
 
-/* [DECLARATION] *************/
+/* <DECLARATION> *************/
 #ifdef Cplusplus
 extern "C" {
 #endif
@@ -39,6 +39,6 @@ extern "C" {
 #ifdef Cplusplus
 }
 #endif
-/* [/DECLARATION] ************/
+/* </DECLARATION> ************/
 
 #endif

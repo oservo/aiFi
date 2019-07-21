@@ -1,46 +1,49 @@
 #ifndef DATA_STRUCTURE__TREE
 #define DATA_STRUCTURE__TREE
 
-/* [INCLUDE] *************/
+/* <INCLUDE> *************/
 #include "popc.h"
-/* [/INCLUDE] ************/
+/* </INCLUDE> ************/
 
-/* [DEFINE] *************/
+/* <DEFINE> *************/
 //#define REQUIRED STUFFS HERE
-/* [/DEFINE] ************/
+/* </DEFINE> ************/
 
-/* [CONST] *************/
+/* <CONST> *************/
 //#define REQUIRED STUFFS HERE
-/* [/CONST] ************/
+/* </CONST> ************/
 
-/* [TYPE] *************/
+/* <TYPE> *************/
 subject treeNode treeNode; //FD!
 subject treeNode {
-	any ptr object;
+	object ptr obj;
 	treeNode ptr left;
 	treeNode ptr right;
 } treeNode;
 
-prototype treeProto {
+pattern treeProto {
 
 } treeProto;
 
-/* [/TYPE] ************/
+/* </TYPE> ************/
 
-/* [VARIABLE] *************/
+/* <VARIABLE> *************/
 
-/* [/VARIABLE] ************/
+/* </VARIABLE> ************/
 
-/* [DECLARATION] *************/
+/* <DECLARATION> *************/
 #ifdef Cplusplus
 extern "C" {
 #endif
 
-
+void treeInsertNode(treeNode ptr2d root, linkedListCompareDelegate compare, object ptr obj);
+void inOrder(treeNode ptr root, linkedListDisplayDelegate display);
+void postOrder(treeNode ptr root, linkedListDisplayDelegate display);
+void preOrder(treeNode ptr root, linkedListDisplayDelegate display);
 
 #ifdef Cplusplus
 }
 #endif
-/* [/DECLARATION] ************/
+/* </DECLARATION> ************/
 
 #endif

@@ -1,43 +1,45 @@
 #ifndef DATA_STRUCTURE__QUEUE
 #define DATA_STRUCTURE__QUEUE
 
-/* [INCLUDE] *************/
+/* <INCLUDE> *************/
 #include "popc.h"
 #include "linkedList.h"
-/* [/INCLUDE] ************/
+/* </INCLUDE> ************/
 
-/* [DEFINE] *************/
+/* <DEFINE> *************/
 //#define REQUIRED STUFFS HERE
-/* [/DEFINE] ************/
+/* </DEFINE> ************/
 
-/* [CONST] *************/
+/* <CONST> *************/
 //#define REQUIRED STUFFS HERE
-/* [/CONST] ************/
+/* </CONST> ************/
 
-/* [TYPE] *************/
+/* <TYPE> *************/
 
 typedef linkedList queue;
 
-prototype queueProto {
+pattern queueProto {
 
 } queueProto;
 
-/* [/TYPE] ************/
+/* </TYPE> ************/
 
-/* [VARIABLE] *************/
+/* <VARIABLE> *************/
 
-/* [/VARIABLE] ************/
+/* </VARIABLE> ************/
 
-/* [DECLARATION] *************/
+/* <DECLARATION> *************/
 #ifdef Cplusplus
 extern "C" {
 #endif
 
-
+queue ptr queueNew ();
+void queueEnqueue(queue ptr queue, object ptr obj);
+object ptr queueDequeue(queue ptr queue);
 
 #ifdef Cplusplus
 }
 #endif
-/* [/DECLARATION] ************/
+/* </DECLARATION> ************/
 
 #endif

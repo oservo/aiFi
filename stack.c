@@ -1,40 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "popc.h"
-#include "dbc.h"
+
 
 #include "linkedList.h"
 #include "stack.h"
 
-property stackProperty {
-
-} stackProperty;
-
-stack ptr stackConstruct () {
+stack ptr stackNew () {
 	stack ptr s;
-	s = (stack ptr) linkedListConstruct ();
+	s = (stack ptr) linkedListNew ();
 	return s;
 }
 
-void stackPush(stack ptr stack, any ptr object) {
-	linkedListAddNodeBeforeHead (stack, object);
+void stackPush(stack ptr stack, object ptr obj) {
+	linkedListAddNodeBeforeHead (stack, obj);
 }
 
-any ptr pop(stack ptr stack) {
-	linkedListNode ptr node = stack -> head;
-	if (node == NULL) {
+object ptr stackPop(stack ptr stack) {
+	linkedListNode ptr cell = stack -> head;
+	if (cell == NULL) {
 		return NULL;
 	} 
-	else if (node == stack -> tail) {
+	else if (cell == stack -> tail) {
 		stack -> head = stack -> tail = NULL;
-		any ptr object = node -> object;
-		free(node);
-		return object;
+		object ptr obj = cell -> obj;
+		free(cell);
+		return obj;
 	} 
 	else {
 		stack -> head = stack -> head -> next;
-		any ptr object = node -> object;
-		free(node);
-		return object;
+		object ptr obj = cell -> obj;
+		free(cell);
+		return obj;
 	}
 }

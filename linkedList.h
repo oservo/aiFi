@@ -1,21 +1,21 @@
 #ifndef DATA_STRUCTURE__LINKED_LIST
 #define DATA_STRUCTURE__LINKED_LIST
 
-/* [INCLUDE] *************/
+/* <INCLUDE> *************/
 #include "popc.h"
-/* [/INCLUDE] ************/
+/* </INCLUDE> ************/
 
-/* [DEFINE] *************/
+/* <DEFINE> *************/
 //#define REQUIRED STUFFS HERE
-/* [/DEFINE] ************/
+/* </DEFINE> ************/
 
-/* [CONST] *************/
+/* <CONST> *************/
 //#define REQUIRED STUFFS HERE
-/* [/CONST] ************/
+/* </CONST> ************/
 
-/* [TYPE] *************/
-typedef void (fnPtr linkedListDisplayDelegate) (any ptr object);
-typedef int (fnPtr linkedListCompareDelegate) (any ptr object1, any ptr object2);
+/* <TYPE> *************/
+typedef void (fnPtr linkedListDisplayDelegate) (object ptr obj);
+typedef int (fnPtr linkedListCompareDelegate) (object ptr obj1, object ptr obj2);
 
 subject linkedListNode linkedListNode;
 subject linkedListNode {
@@ -25,7 +25,7 @@ subject linkedListNode {
 	// /block header //
 
 	// block body //
-	void ptr object;
+	void ptr obj;
 	// /block body //
 } linkedListNode;
 
@@ -35,50 +35,50 @@ subject linkedList {
 	linkedListNode ptr current;
 } linkedList;
 
-prototype linkedListProto {
+pattern linkedListProto {
 
 } linkedListProto;
 
-/* [/TYPE] ************/
+/* </TYPE> ************/
 
-/* [VARIABLE] *************/
+/* <VARIABLE> *************/
 
-/* [/VARIABLE] ************/
+/* </VARIABLE> ************/
 
-/* [DECLARATION] *************/
+/* <DECLARATION> *************/
 #ifdef Cplusplus
 extern "C" {
 #endif
 
 // Initializes the linked list
-linkedListProto ptr	linkedListProtoInstance ();
+linkedListProto ptr	linkedListProtoNew ();
 
 // Initializes the linked list
-linkedList ptr 					linkedListConstruct ();
+linkedList ptr 					linkedListNew ();
 
 // Destroy the linked list
-void 										linkedListDestruct (linkedList ptr ll);
+void 										linkedListDel (linkedList ptr ll);
 
-// Initializes the linked list node
-linkedListNode ptr linkedListConstructNode ();
+// Initializes the linked list cell
+linkedListNode ptr linkedListNewNode ();
 
-// Destroy the linked list node
-void linkedListDestructNode (linkedListNode ptr lln);
-
-// Adds data to the linked list’s head
-linkedListNode ptr 			linkedListAddNodeBeforeHead (linkedList ptr ll, any ptr object);
+// Destroy the linked list cell
+void linkedListDelNode (linkedListNode ptr lln);
 
 // Adds data to the linked list’s head
-linkedListNode ptr 			linkedListInsertNode (linkedList ptr ll, any ptr object); 
+linkedListNode ptr 			linkedListAddNodeBeforeHead (linkedList ptr ll, object ptr obj);
+
+// Adds data to the linked list’s head
+linkedListNode ptr 			linkedListInsertNode (linkedList ptr ll, object ptr obj); 
 
 // Adds data to the linked list’s tail
-linkedListNode ptr 			linkedListAddNodeAfterTail (linkedList ptr ll, any ptr object);
+linkedListNode ptr 			linkedListAddNodeAfterTail (linkedList ptr ll, object ptr obj);
 
-// Removes a node from the linked list
+// Removes a cell from the linked list
 void 										linkedListDeleteNode (linkedList ptr ll, linkedListNode ptr lln);
 
-// Returns a pointer to the node containing a specific data item
-linkedListNode ptr 			linkedListGetNode (linkedList ptr ll, linkedListCompareDelegate llCmp, any ptr object);
+// Returns a pointer to the cell containing a specific data item
+linkedListNode ptr 			linkedListGetNode (linkedList ptr ll, linkedListCompareDelegate llCmp, object ptr obj);
 
 // display linkedList
 void 										linkedListDisplay (linkedList ptr ll, linkedListDisplayDelegate display);
@@ -87,6 +87,6 @@ void 										linkedListDisplay (linkedList ptr ll, linkedListDisplayDelegate d
 #ifdef Cplusplus
 }
 #endif
-/* [/DECLARATION] ************/
+/* </DECLARATION> ************/
 
 #endif

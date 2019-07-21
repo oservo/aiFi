@@ -1,35 +1,35 @@
 #ifndef AIFI__MOMENTUM
 #define AIFI__MOMENTUM
 
-/* [INCLUDE] *************/
+/* <INCLUDE> *************/
 #include "popc.h"
-/* [/INCLUDE] ************/
+/* </INCLUDE> ************/
 
-/* [DEFINE] *************/
+/* <DEFINE> *************/
 //#define REQUIRED STUFFS HERE
-/* [/DEFINE] ************/
+/* </DEFINE> ************/
 
-/* [CONST] *************/
+/* <CONST> *************/
 //#define REQUIRED STUFFS HERE
-/* [/CONST] ************/
+/* </CONST> ************/
 
-/* [TYPE] *************/
+/* <TYPE> *************/
 
 subject momentum {
 
 } momentum;
 
-prototype momentumProto {
+pattern momentumProto {
 
 } momentumProto;
 
-/* [/TYPE] ************/
+/* </TYPE> ************/
 
-/* [VARIABLE] *************/
+/* <VARIABLE> *************/
 
-/* [/VARIABLE] ************/
+/* </VARIABLE> ************/
 
-/* [DECLARATION] *************/
+/* <DECLARATION> *************/
 #ifdef Cplusplus
 extern "C" {
 #endif
@@ -39,6 +39,6 @@ extern "C" {
 #ifdef Cplusplus
 }
 #endif
-/* [/DECLARATION] ************/
+/* </DECLARATION> ************/
 
 #endif

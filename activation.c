@@ -8,21 +8,10 @@
 #include <math.h>
 
 #include "popc.h"
-#include "dbc.h"
+
 
 #include "activation.h"
 
-
-property activationProperty {
-	activationTransferType att;
-
-} activationProperty;
-
-/*
-activationProperty ap = {
-  attLogisticSigmoid 
-};
-*/
 
 //// V2 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -39,7 +28,7 @@ double activationIdentity (double x) {
 	Formula:
 	Returns: 
 
-double activationIdentityDerivative (double x) {
+double activationIdentityPrime (double x) {
 	// formula: f(x) {return 1}
 	// returns: 1
   return x - x + 1;
@@ -57,7 +46,7 @@ double activationBinary (double x) {
 /*	PENDING!
 	Formula:
 	Returns: 
-double activationBinaryDerivative (double x) {
+double activationBinaryPrime (double x) {
   return 0;
 }
 */
@@ -74,7 +63,7 @@ double activationLogisticSigmoid (double x) {
 	Formula:
 	Returns: 
 */
-double activationLogisticSigmoidDerivative (double x) {
+double activationLogisticSigmoidPrime (double x) {
   return activationLogisticSigmoid (x) * (1 - activationLogisticSigmoid (x));
 }
 
@@ -89,7 +78,7 @@ double activationBipolarSigmoid (double x) {
 /*	PENDING
 	Formula:
 	Returns: 
-double activationBipolarSigmoidDerivative (double x) {
+double activationBipolarSigmoidPrime (double x) {
   return (1/2) * (1 + activationBipolarSigmoid (x)) * (1 - activationBipolarSigmoid (x));
 }
 */
@@ -99,14 +88,22 @@ double activationBipolarSigmoidDerivative (double x) {
 	Returns: 
 */
 double activationHyperbolicTan (double x) {
-  return tanh (x);
+	if (x < -20.0) {
+		return -1.0; // approximation is correct to 30 decimals
+	}
+	else if (x > 20.0) {
+		return 1.0;	
+	}
+	else {
+		return tanh (x);
+	}
 }
 
 /*
 	Formula:
 	Returns: 
 */
-double activationHyperbolicTanDerivative (double x) {
+double activationHyperbolicTanPrime (double x) {
   return 1 - pow (activationHyperbolicTan (x), 2);
 }
 
@@ -121,7 +118,7 @@ double activationArcTan (double x) {
 /*	PENDING
 	Formula:
 	Returns: 
-double activationArcTanDerivative (double x) {
+double activationArcTanPrime (double x) {
   return 1 - pow(x, 2);
 }
 */
@@ -138,7 +135,7 @@ double activationRectifiedLinerUnit (double x) {
 	Formula:
 	Returns: 
 */
-double activationRectifiedLinerUnitDerivative (double x) {
+double activationRectifiedLinerUnitPrime (double x) {
   return x <= 0 ? 0 : 1;
 }
 
@@ -154,7 +151,7 @@ double activationLeakyRectifiedLinerUnit (double x) {
 	Formula:
 	Returns: 
 */
-double activationLeakyRectifiedLinerUnitDerivative (double x) {
+double activationLeakyRectifiedLinerUnitPrime (double x) {
   return x <= 0 ? 0.01 : 1;
 }
 
@@ -169,7 +166,7 @@ double activationParametricRectifiedLinerUnit (double x) {
 /*	PENDING
 	Formula:
 	Returns: 
-double activationParametricRectifiedLinerUnitDerivative (double x) {
+double activationParametricRectifiedLinerUnitPrime (double x) {
   return 1 - pow(x, 2);
 }
 */
@@ -185,34 +182,34 @@ double activationExponentialLinerUnit (double x) {
 /*	PENDING
 	Formula:
 	Returns: 
-double activationExponentialLinerUnitDerivative (double x) {
+double activationExponentialLinerUnitPrime (double x) {
   return 1 - pow(x, 2);
 }
 */
 
-double activationTransfer (activation ptr act, double x) {
+ double activationTransfer (activation ptr act, double x) {
   return act -> activationTransferFunction (x);
 }
 
-double activationTransferDerivative (activation ptr act, double x) {
-  return act -> activationTransferFunctionDerivative (x);
+ double activationTransferPrime (activation ptr act, double x) {
+  return act -> activationTransferFunctionPrime (x);
 }
 
 
 /* IMPLEMENTATION PENDING
-activationProto ptr activationProtoInstance () {
-	static activationProto ptr this = NULL;
+activationI ptr activationProtoNew () {
+	static activationI ptr this = NULL;
 	
 	// TODO lock() immediately here (before the following block)
 	if (this == NULL) {
-		this = malloc (sizeof (activationProto));
+		this = malloc (sizeof (activationI));
 
-		this -> ctor					= activationCtor;
+		this -> activationNew		= activationNew;
 
 		this -> sigmoid				 = activationSigmoid;
-		this -> sigmoidDerivative	   = activationSigmoidDerivative;
+		this -> sigmoidPrime	   = activationSigmoidPrime;
 		this -> perform				 = activationPerform;
-		this -> performDerivative	   = activationPerformDerivative;
+		this -> performPrime	   = activationPerformPrime;
 	}
 	// TODO unlock() immediately here (after the above block)
 
@@ -221,35 +218,44 @@ activationProto ptr activationProtoInstance () {
 }
 */
 
-activation ptr activationConstruct (activationTransferType att) {
+activation ptr activationNew (activationFunctionType aft) {
 	activation ptr act = (activation ptr) malloc ( sizeof (activation));
-	dbcEnsure (act != NULL, "Memory Allocation Error");
+	dbcEnsure (act != NULL, "Memory Allocation Error!");
 		
-	act -> att = att;
-  switch (att) {
-		case attLogisticSigmoid:
+	act -> aft = aft;
+  switch (aft) {
+		case aftLogisticSigmoid:
 			act -> activationTransferFunction = activationLogisticSigmoid;
-			act -> activationTransferFunctionDerivative = activationLogisticSigmoidDerivative;
+			act -> activationTransferFunctionPrime = activationLogisticSigmoidPrime;
 			break;
 	
+		case aftHyperbolicTan:
+			act -> activationTransferFunction = activationHyperbolicTan;
+			act -> activationTransferFunctionPrime = activationHyperbolicTanPrime;
+			break;
+
 		/*	PENDING
+		case aftRectifiedLinerUnit:
+			act -> activationTransferFunction = activationRectifiedLinearUnit;
+			act -> activationTransferFunctionPrime = activationRectifiedLinearUnitPrime;
+			break;
+
 		case attBipolarSigmoid:
 			act -> activationTransferFunction = activationBipolarSigmoid;
-			act -> activationTransferFunction = activationBipolarSigmoidDerivative;
+			act -> activationTransferFunctionPrime = activationBipolarSigmoidPrime;
 			break;
 		*/
 
-		case attHyperbolicTan:
-			act -> activationTransferFunction = activationHyperbolicTan;
-			act -> activationTransferFunction = activationHyperbolicTanDerivative;
+		case aftNone:
+			act -> activationTransferFunction = NULL;
+			act -> activationTransferFunctionPrime = NULL;
 			break;
-
 		default:
 			dbcRequire (false, "Unknown actionvation function request.");
   }
 	return act;
 }
 
-void activationDestruct (activation ptr act) {
+void activationDel (activation ptr act) {
 	free (act);
 }

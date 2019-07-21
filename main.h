@@ -7,26 +7,26 @@
 #ifndef AIFI__MAIN
 #define AIFI__MAIN
 
-// [INCLUDE] //
+// <INCLUDE> //
 #include "popc.h"
 
-// [/INCLUDE] //
+// </INCLUDE> //
 
 subject main {
 
 } main;
 
-prototype mainProto {
+pattern mainI {
 
-} mainProto;
+} mainI;
 
 #ifdef Cplusplus
 extern "C" {
 #endif
 
-// [DECLARATION] //
+// <DECLARATION> //
 
-// [/DECLARATION] //
+// </DECLARATION> //
 
 #ifdef Cplusplus
 }

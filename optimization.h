@@ -1,48 +1,65 @@
 #ifndef AIFI__OPTIMIZATION
 #define AIFI__OPTIMIZATION
 
-/* [INCLUDE] *************/
+/* <INCLUDE> *************/
 #include "popc.h"
-/* [/INCLUDE] ************/
+/* </INCLUDE> ************/
 
-/* [DEFINE] *************/
+/* <DEFINE> *************/
 //#define REQUIRED STUFFS HERE
-/* [/DEFINE] ************/
+/* </DEFINE> ************/
 
-/* [CONST] *************/
+/* <CONST> *************/
 //#define REQUIRED STUFFS HERE
-/* [/CONST] ************/
+/* </CONST> ************/
 
-/* [TYPE] *************/
+delegation double (fnPtr optimizationFunctionDelegate) ();
+delegation double (fnPtr optimizationFunctionPrimeDelegate) ();
+
+/* <TYPE> *************/
+enumeration optimizationFunctionType {
+	oftGradientDescent,
+	oftStochasticGradientDescent,
+	oftAdagrad,
+	oftAdam,
+} optimizationFunctionType;
+
 
 subject optimization {
-
+	optimizationFunctionType oft;
+	optimizationFunctionDelegate optimizationTransferFunction;
+	optimizationFunctionPrimeDelegate optimizationTransferFunctionPrime;
 } optimization;
 
-prototype optimizationProto {
+pattern optimizationProto {
 
 } optimizationProto;
 
-/* [/TYPE] ************/
+/* </TYPE> ************/
 
-/* [VARIABLE] *************/
+/* <VARIABLE> *************/
 
-/* [/VARIABLE] ************/
+/* </VARIABLE> ************/
 
-/* [DECLARATION] *************/
+/* <DECLARATION> *************/
 #ifdef Cplusplus
 extern "C" {
 #endif
 
-double gradientDescent ();
-double stochasticGradientDescent ();
-double adagrad ();
-double adam ();
+optimization ptr optimizationNew (optimizationFunctionType oft);
+void optimizationDel (optimization ptr of);
+
+
+double optimizationGradientDescent ();
+double optimizationGradientDescentPrime ();
+double optimizationStochasticGradientDescent ();
+double optimizationAdagrad ();
+double optimizationAdam ();
 
 
 #ifdef Cplusplus
 }
 #endif
-/* [/DECLARATION] ************/
+/* </DECLARATION> ************/
 
 #endif

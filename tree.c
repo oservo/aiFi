@@ -3,36 +3,32 @@
 #include <string.h>
 
 #include "popc.h"
-#include "dbc.h"
+
 
 #include "linkedList.h"
 #include "tree.h"
 
-property treeProperty {
+void treeInsertNode(treeNode ptr2d root, linkedListCompareDelegate compare, object ptr obj) {
+	treeNode ptr cell = (treeNode ptr) malloc (sizeof (treeNode));
+	dbcEnsure (cell != NULL, "Memory Allocation Error!");
 
-} treeProperty;
-
-void treeInsertNode(treeNode ptr2d root, linkedListCompareDelegate compare, any ptr object) {
-	treeNode ptr node = (treeNode ptr) malloc (sizeof (treeNode));
-	dbcEnsure (node != NULL, "Memory Allocation Error");
-
-	node->object = object;
-	node->left = NULL;
-	node->right = NULL;
+	cell->obj = obj;
+	cell->left = NULL;
+	cell->right = NULL;
 
 	if (*root == NULL) {
-		*root = node;
+		*root = cell;
 		return;
 	}
 
 	while (1) {
 		//if (compare((*root)->data, data) > 0) {
-		if (compare((*root)->object, object) > 0) {
+		if (compare((*root)->obj, obj) > 0) {
 			if ((*root)->left != NULL) {
 				*root = (*root)->left;
 			} 
 			else {
-				(*root)->left = node;
+				(*root)->left = cell;
 				break;
 			}
 		} 
@@ -41,7 +37,7 @@ void treeInsertNode(treeNode ptr2d root, linkedListCompareDelegate compare, any 
 				*root = (*root)->right;
 			} 
 			else {
-				(*root)->right = node;
+				(*root)->right = cell;
 				break;
 			}
 		}
@@ -51,20 +47,22 @@ void treeInsertNode(treeNode ptr2d root, linkedListCompareDelegate compare, any 
 void inOrder(treeNode ptr root, linkedListDisplayDelegate display) {
 	if (root != NULL) {
 		inOrder(root->left, display);
-		display(root->object);
+		display(root->obj);
 		inOrder(root->right, display);
 	}
 }
+
 void postOrder(treeNode ptr root, linkedListDisplayDelegate display) {
 	if (root != NULL) {
 		postOrder(root->left, display);
 		postOrder(root->right, display);
-		display(root->object);
+		display(root->obj);
 	}
 }
+
 void preOrder(treeNode ptr root, linkedListDisplayDelegate display) {
 	if (root != NULL) {
-		display(root->object);
+		display(root->obj);
 		preOrder(root->left, display);
 		preOrder(root->right, display);
 	}
