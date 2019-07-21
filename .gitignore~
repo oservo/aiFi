@@ -6,9 +6,6 @@
 *.ko
 *.obj
 *.elf
-cs/
-java/
-.vscode/
 
 # Linker output
 *.ilk

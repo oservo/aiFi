@@ -3,7 +3,6 @@
 #include <time.h>
 
 #include "popc.h"
-
 #include "test.h"
 
 
