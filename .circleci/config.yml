@@ -20,4 +20,4 @@ jobs:
           command: 'make'
       - run:
           name: Point Unit Testing
-          command: './aiFi'
+          command: './aifi'
