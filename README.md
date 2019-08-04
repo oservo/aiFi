@@ -4,6 +4,7 @@
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
 <img src="https://awesome.re/badge-flat.svg" alt="License">
 <img src="https://img.shields.io/badge/powered%20by-oservo-blue.svg" alt="made with python">
+[![CircleCI](https://circleci.com/gh/mnislam01/aiFi.svg?style=svg)](https://circleci.com/gh/mnislam01/aiFi)
 </p>
 
 ## About aiFi
