@@ -107,7 +107,7 @@ int trainAndPredictXorTable (int epoch, int tStart, int tEnd, int start, int end
 				//printf ("%d\n", r);
 			}
 		}
-		printf ("Epoch: %0d )\n", j+1);
+		printf("Epoch: %0d\n", j+1);
   }
 
 	printf ("==TRIAL==\n");
