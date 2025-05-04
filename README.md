@@ -30,6 +30,7 @@ We would like to extend our thanks to the following sponsors for funding aiFi de
 ## Contributing
 
 Thank you for considering contributing to the aiFi! The contribution guide can be found in the [aiFi documentation](https://oservo.github.io/aiFi/).
+JUST DO IT.
 
 ## License
 
